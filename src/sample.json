@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "title": "Pulp Fiction",
+        "director": "Quentin Tarantino",
+        "year": "1994",
+        "rating": "8.9"
+    },
+    {
+        "id": "2",
+        "title": "Amanece que no es poco",
+        "director": "José Luis Cuerda",
+        "year": "1989",
+        "rating": "7.5"
+    }
+]
