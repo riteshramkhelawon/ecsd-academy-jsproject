@@ -26,4 +26,16 @@ router.post('/', (req, res) => {
     }
 });
 
+//remove a car
+router.delete('/:id', (req,res) => {
+    const { id } = req.params;
+    
+    cars.forEach((car, index) => {
+        if(car.id === id){
+            cars.splice(index, 1);
+            res.json(cars);
+        }
+    });
+});
+
 module.exports = router
