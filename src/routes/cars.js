@@ -6,6 +6,21 @@ const cars = require('../sample.json')
 //retrieve all cars
 router.get('/', (req, res) => res.json(cars))
 
+//retrieve a specific car entry
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    let isFound = false;
+
+    cars.forEach(car => {
+        if(car.id === id){
+            res.json(car);
+            isFound = true;
+        }
+    });
+
+    if(!isFound) res.status(404).json({ error: `car with id '${id} not found`});
+});
+
 //add a new car
 router.post('/', (req, res) => {
     const newCar = { id: (cars.length + 1).toString(), ...req.body }
